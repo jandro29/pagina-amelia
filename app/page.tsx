@@ -54,7 +54,6 @@ export default function PersonalLanding() {
 
   // Lista de imágenes para el carrusel
   const images = [
-
     {
       src: "/images/bebeypepe.jpg",
       caption: "Foto con mi Esposo",
@@ -67,7 +66,7 @@ export default function PersonalLanding() {
       src: "/images/foto-hijos.jpg",
       caption: "Foto con mis hijos",
     },
-    
+
     {
       src: "/images/foto-familiar2.png.jpg",
       caption: "Boda de oro",
@@ -229,7 +228,9 @@ export default function PersonalLanding() {
                   <p className="text-xs opacity-80">
                     {playlist[currentTrack].artist}
                   </p>
-                  <p><b>Musicas que me gustaban escuchar</b></p>
+                  <p>
+                    <b>Musicas que me gustaban escuchar</b>
+                  </p>
                 </div>
               </div>
 
@@ -428,8 +429,8 @@ export default function PersonalLanding() {
 
           <section>
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-6">
-              Actualmente me encuentro enterrada en el cementerio El Angel en El
-              Agustino en exactamente en <br />
+              Actualmente me encuentro descansando en el Cementerio El Ángel, en
+              El Agustino, exactamente en <br /><br />
               <span>
                 <b> Jardin: SAN LAUREANO I</b>
               </span>{" "}
@@ -438,8 +439,22 @@ export default function PersonalLanding() {
                 <b>En el Sectoro 01</b>
               </span>
               <br />
-              Estaria muy agradecida si pasan a saludarme y a dejarme una bellas
-              flores y si me tienen en cuenta en sus horaciones
+              <br />
+              Estaré siempre agradecida si pasan a saludarme y me dejan unas
+              bellas flores, como símbolo de su cariño y recuerdo. Cada flor
+              será para mí un gesto de amor que trasciende el tiempo y la
+              distancia.
+              <br />
+              <br />
+              También les pido que me tengan presente en sus oraciones. Sé que a
+              través de ellas la fe y el afecto nos siguen uniendo, aunque ya no
+              me encuentren físicamente a su lado. Sus plegarias son para mí un
+              abrazo del alma que me llena de paz y me recuerda cuánto amor
+              compartimos en vida.
+              <br />
+              <br />
+              No me despido, porque sigo viviendo en cada recuerdo, en cada
+              sonrisa y en cada pensamiento que nace de ustedes.
             </p>
 
             <div className="w-[100%]">
