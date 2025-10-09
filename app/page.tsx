@@ -350,7 +350,7 @@ export default function PersonalLanding() {
 
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-6">
               Nací en la ciudad de Lima el 2 de julio de 1951. A los 20 años me
-              casé con José Rosenthal Neira, con quien formé una hermosa familia
+              casé con José Rosenthal Neyra, con quien formé una hermosa familia
               y tuve la bendición de tener 6 hijos. Con el paso de los años, la
               vida también me regaló 9 nietos y la dicha de conocer a 2 de mis
               bisnietos. Aunque me hubiera gustado abrazar a todos mis nietos y
