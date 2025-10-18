@@ -25,6 +25,7 @@ export default function PersonalLanding() {
   const [isMuted, setIsMuted] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex2, setCurrentImageIndex2] = useState(0); // Segundo carrusel
   const audioRef = useRef<HTMLAudioElement>(null);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
 
@@ -43,7 +44,6 @@ export default function PersonalLanding() {
   ];
 
   // Lista de imágenes y videos
-
   const media = [
     { type: "image", src: "/images/foto-amelia.jpg" },
     { type: "video", src: "/videos/momento-1.mp4" },
@@ -52,7 +52,7 @@ export default function PersonalLanding() {
     { type: "video", src: "/videos/video-2.mp4" },
   ];
 
-  // Lista de imágenes para el carrusel
+  // Lista de imágenes para el primer carrusel
   const images = [
     {
       src: "/images/bebeypepe.jpg",
@@ -66,7 +66,6 @@ export default function PersonalLanding() {
       src: "/images/foto-hijos.jpg",
       caption: "Foto con mis hijos",
     },
-
     {
       src: "/images/foto-familiar2.png.jpg",
       caption: "Boda de oro",
@@ -111,6 +110,133 @@ export default function PersonalLanding() {
       src: "/images/foto-familiar.png",
       caption: "Junto a sus seres queridos",
     },
+  ];
+
+  // Lista de imágenes para el segundo carrusel (puedes usar las mismas o diferentes)
+  const images2 = [
+    {
+      src: "/images/nuevo-carrousel/amelia-pepe4.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/hijos.jpg",
+    },
+
+    {
+      src: "/images/nuevo-carrousel/amelia-eduardo.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia-pepe.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia-pepe2.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia-pepe3.jpg",
+    },
+
+    {
+      src: "/images/nuevo-carrousel/amelia-pepe5.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia-pepe6.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia-pepe7.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia-sola2.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia-sola3.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia-sola4.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia-sola5.jpg",
+    },
+
+    {
+      src: "/images/nuevo-carrousel/amelia-sola5.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia-solo.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/amelia.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/bebe.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/boda.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/hijos.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/hijos2.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/jahaida-hijos.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/jessica.jpg",
+    },
+
+    {
+      src: "/images/nuevo-carrousel/johana.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/yanina.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/jessenia.jpg",
+    },
+
+    {
+      src: "/images/nuevo-carrousel/toto.jpg",
+    },
+
+    {
+      src: "/images/nuevo-carrousel/jahaida.jpg",
+    },
+
+    {
+      src: "/images/nuevo-carrousel/alexandra.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/aldair.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/nieto-alejandro.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/nayeli.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/adriana.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/valentina.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/leo.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/lucas.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/nietas.jpg",
+    },
+    {
+      src: "/images/nuevo-carrousel/nietos.jpg",
+    },
+
+    
   ];
 
   // Actualizar el tiempo actual
@@ -200,12 +326,24 @@ export default function PersonalLanding() {
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   };
 
+  // Funciones para el primer carrusel
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % images.length);
   };
 
   const previousImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  // Funciones para el segundo carrusel
+  const nextImage2 = () => {
+    setCurrentImageIndex2((prev) => (prev + 1) % images2.length);
+  };
+
+  const previousImage2 = () => {
+    setCurrentImageIndex2(
+      (prev) => (prev - 1 + images2.length) % images2.length
+    );
   };
 
   return (
@@ -216,7 +354,6 @@ export default function PersonalLanding() {
           <div className="max-w-7xl mx-auto px-4 py-3">
             <div className="flex items-center gap-4">
               {/* Información de la canción */}
-
               <div className="hidden md:flex items-center gap-3 min-w-[200px]">
                 <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white">
                   🎵
@@ -366,11 +503,11 @@ export default function PersonalLanding() {
             </p>
           </section>
 
-          {/* Carrusel de Imágenes */}
+          {/* Primer Carrusel de Imágenes */}
           <section className="mb-24">
             <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
               <div className="w-1 h-8 bg-gray-500 rounded-full" />
-              Galería de Recuerdos
+              Galería de Recuerdos Familiares
             </h2>
 
             <div className="relative w-full aspect-video bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden shadow-xl">
@@ -425,12 +562,65 @@ export default function PersonalLanding() {
               </div>
             </div>
           </section>
-          {/* Contact/References */}
 
+          {/* Segundo Carrusel de Imágenes */}
+          <section className="mb-24">
+            <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+              <div className="w-1 h-8 bg-gray-500 rounded-full" />
+              Momentos Especiales
+            </h2>
+
+            <div className="relative w-full aspect-video bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden shadow-xl">
+              {/* Imagen actual */}
+              <div className="relative w-full h-full">
+                <img
+                  src={images2[currentImageIndex2].src}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* Botón anterior */}
+              <button
+                onClick={previousImage2}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-2 backdrop-blur-sm transition-all"
+                title="Imagen anterior"
+              >
+                <ChevronLeft size={24} />
+              </button>
+
+              {/* Botón siguiente */}
+              <button
+                onClick={nextImage2}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-2 backdrop-blur-sm transition-all"
+                title="Siguiente imagen"
+              >
+                <ChevronRight size={24} />
+              </button>
+
+              {/* Indicadores */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                {images2.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex2(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentImageIndex2
+                        ? "bg-white w-8"
+                        : "bg-white/50 hover:bg-white/70"
+                    }`}
+                    title={`Ir a imagen ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Contact/References */}
           <section>
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-6">
               Actualmente me encuentro descansando en el Cementerio El Ángel, en
-              El Agustino, exactamente en <br /><br />
+              El Agustino, exactamente en <br />
+              <br />
               <span>
                 <b> Jardin: SAN LAUREANO I</b>
               </span>{" "}
